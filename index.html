@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkibidiGames</title>
+    <style>
+        * {
+            transition: 0.35s ease;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        header {
+            margin: 20px 0;
+            text-align: center;
+            font-size: 2em;
+            mix-blend-mode: screen;
+        }
+        
+        header a:hover {
+            cursor: pointer;
+            text-shadow: 
+                0 0 5px #ffffff,
+                0 0 10px #ffffff, 
+                0 0 20px #ffffff,
+                0 0 40px #ffffff,
+                0 0 80px #ffffff; 
+        }
+
+        .logo span {
+            color: #0090FF;
+        }
+        
+        .logo span:hover {
+            color: #0090FF;
+            cursor: pointer;
+            text-shadow: 
+                0 0 5px #0090FF,
+                0 0 10px #0090FF,
+                0 0 20px #0090FF,
+                0 0 40px #00FFFF,
+                0 0 80px #00FFFF;
+        }
+
+        .program-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .program {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1e1e1e;
+            border-radius: 25px;
+            padding: 40px;
+            margin: 0 20px;
+            box-sizing: border-box;
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .program:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .program img {
+    width: 120px;
+    height: 120px;
+    border-radius: 25px;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+}
+    .program img:hover {
+        box-shadow: 0 0 5px #41bcff, 0 0 10px #5481fb, 0 0 15px #FF0000;
+    }
+
+    .program:nth-child(1) img:hover {
+        box-shadow: 0 0 5px #41bcff, 0 0 10px #5481fb, 0 0 20px #4aa3fc;
+    }
+
+    .program:nth-child(2) img:hover {
+        box-shadow: 0 0 5px #fe91c2, 0 0 10px #f15b29, 0 0 20px #ff2da1;
+    }
+
+    .program:nth-child(3) img:hover {
+        box-shadow: 0 0 5px #FFFFFF, 0 0 10px #FFFFFF, 0 0 20px #FFFFFF;
+    }
+
+
+    .program:nth-child(4) img:hover {
+        box-shadow: 0 0 5px #FFFFFF, 0 0 10px #FFFFFF, 0 0 20px #FFFFFF;
+    }
+
+    .program:nth-child(5) img:hover {
+        box-shadow: 0 0 5px #0083ff, 0 0 10px #0083ff, 0 0 20px #0083ff;
+    }
+    .program:nth-child(4) img {
+         background-color: white;
+    }
+    
+    .program:nth-child(5) img {
+        filter: hue-rotate(155deg);
+    }
+
+        .program-details {
+            max-width: 60%;
+        }
+
+        .program-title {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .program-description {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            color: #c0c0c0;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .buttons button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 0.7em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #282828;
+            color: white;
+        }
+
+        .buttons button::before {
+            content: '';
+            display: inline-block;
+            padding: 20px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .buttons .macos::before {
+            background-image: url('https://www.vectorlogo.zone/logos/apple/apple-tile.svg');
+        }
+
+        .buttons .windows::before {
+            background-image: url('https://cdn.worldvectorlogo.com/logos/windows-1.svg');
+        }
+
+        .buttons button:hover {
+            background-color: lightblue;
+            color: black;
+        }
+        
+        .link:hover {
+            color: #0090FF;
+            text-shadow: 
+                0 0 5px #0090FF,
+                0 0 10px #0090FF,
+                0 0 20px #0090FF,
+                0 0 40px #00FFFF,
+                0 0 80px #00FFFF;
+        }
+        .link {
+            text-decoration: none;
+            color: #0090FF;
+            text-align: center;
+        }
+        
+        .center {
+            display: flex;
+            margin-top: 20px;
+            margin-bottom: -20px;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+<header class="logo">
+    <span>Skibidi</span><a>Apps</a>
+</header>
+
+<div class="program-container">
+    <div class="program">
+        <img src="https://i.pinimg.com/originals/a2/53/d7/a253d7f0eaae570dd4c021e1320164ab.png" draggable="false">
+        <div class="program-details">
+            <div class="program-title">Radio FM DX</div>
+            <div class="program-description">A fast and optimized radio app to enjoy music and broadcasts from the radio.</div>
+            <div class="buttons">
+                <button class="macos">Version for MacOS</button>
+                <button class="windows">Version for Windows</button>
+            </div>
+            <div class="center">
+            <a href="#" class="link">Download for Linux</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="program">
+        <img src="https://play-lh.googleusercontent.com/5WTYuaEvBSQ3Eh_YbzH-MCwQeB3wdEvXoxXGVDtvpeFSunyeXbVwjmul6y5J1d2rKeg" draggable="false">
+        <div class="program-details">
+            <div class="program-title">Gallery+</div>
+            <div class="program-description">A gallery app with a huge amount of new usable features, like photoscan and etc.</div>
+            <div class="buttons">
+                <button class="macos">Version for MacOS</button>
+                <button class="windows">Version for Windows</button>
+            </div>
+                        <div class="center">
+            <a href="#" class="link">Download for Linux</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="program">
+        <img src="https://icon-library.com/images/google-photos-app-icon/google-photos-app-icon-23.jpg" draggable="false">
+        <div class="program-details">
+            <div class="program-title">File Manager Slim</div>
+            <div class="program-description">File Manager with a lot of features, like sorting files, addons and etc.</div>
+            <div class="buttons">
+                <button class="macos">Version for MacOS</button>
+                <button class="windows">Version for Windows</button>
+            </div>
+            <div class="center">
+            <a href="#" class="link">Download for Linux</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="program">
+        <img src="https://www.iconarchive.com/download/i86690/johanchalibert/mac-osx-yosemite/gamecenter.ico" draggable="false">
+        <div class="program-details">
+            <div class="program-title">Game Center</div>
+            <div class="program-description">A customizable app for managing your game activities.</div>
+            <div class="buttons">
+                <button class="macos">Version for MacOS</button>
+                <button class="windows">Version for Windows</button>
+            </div>
+            <div class="center">
+            <a href="#" class="link">Download for Linux</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="program">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Garry%27s_Mod_logo.svg/1200px-Garry%27s_Mod_logo.svg.png" draggable="false">
+        <div class="program-details">
+            <div class="program-title">Garry's Mod: Deluxe</div>
+            <div class="program-description">
+Garry's Mod Deluxe is an enhanced sandbox game with extra tools, features, and content.</div>
+            <div class="buttons">
+                <button class="macos">Version for MacOS</button>
+                <button class="windows">Version for Windows</button>
+            </div>
+            <div class="center">
+            <a href="#" class="link">Download for Linux</a>
+            </div>
+        </div>
+    </div>
+</div>
+<footer style="text-align: center; margin: 20px">
+    &copy; SkibidiApps 2024 <br> <span style="font-size: 14px; opacity: 0.5">All rights reserved </span>
+</footer>
+
+</body>
+</html>
