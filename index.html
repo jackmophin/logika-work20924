@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkibidiGames</title>
+    <title>SkibidiApps</title>
     <style>
+    @font-face {
+      font-family: "icons";
+      src: url("https://jackmophin.github.io/local/fonts/icons.woff2") format("woff2");
+      font-weight: normal;
+      font-style: normal;
+    }
+    
         * {
             transition: 0.35s ease;
         }
@@ -121,6 +128,13 @@
         .program-title {
             font-size: 1.8em;
             margin-bottom: 15px;
+            align-items: center;
+            display: flex;
+        }
+        
+        .icon {
+            font-family: "icons";
+            font-size: 1em;
         }
 
         .program-description {
@@ -184,6 +198,19 @@
             text-align: center;
         }
         
+        nav a {
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+        }
+        
+        nav {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+        
         .center {
             display: flex;
             margin-top: 20px;
@@ -191,19 +218,42 @@
             align-items: center;
             justify-content: center;
         }
+        
+        nav a[selected="true"] {
+            text-shadow: 
+                0 0 5px #ffffff,
+                0 0 10px #ffffff, 
+                0 0 20px #ffffff,
+                0 0 40px #ffffff,
+                0 0 80px #ffffff; 
+        }
+        
+        nav a[selected="true"]:hover {
+            cursor: default;
+        }
+        
+        nav:hover a:not(:hover)[selected="true"] {
+    text-shadow: none;
+}
     </style>
 </head>
 <body>
-
 <header class="logo">
     <span>Skibidi</span><a>Apps</a>
+    <div class="center">
+    <nav>
+      <a href="about.html" selected="false">About</a>  
+      <a selected="true">Apps</a>  
+      <a href="#" selected="false">License</a>  
+    </nav>
+    </div>
 </header>
 
 <div class="program-container">
     <div class="program">
         <img src="https://i.pinimg.com/originals/a2/53/d7/a253d7f0eaae570dd4c021e1320164ab.png" draggable="false">
         <div class="program-details">
-            <div class="program-title">Radio FM DX</div>
+            <div class="program-title">Radio FM DX&nbsp;<a class="icon">&#xf189;</a></div>
             <div class="program-description">A fast and optimized radio app to enjoy music and broadcasts from the radio.</div>
             <div class="buttons">
                 <button class="macos">Version for MacOS</button>
@@ -218,7 +268,9 @@
     <div class="program">
         <img src="https://play-lh.googleusercontent.com/5WTYuaEvBSQ3Eh_YbzH-MCwQeB3wdEvXoxXGVDtvpeFSunyeXbVwjmul6y5J1d2rKeg" draggable="false">
         <div class="program-details">
-            <div class="program-title">Gallery+</div>
+            <div class="program-title">
+                <a class="icon">&#xf193;</a>
+            &nbsp;Gallery+</div>
             <div class="program-description">A gallery app with a huge amount of new usable features, like photoscan and etc.</div>
             <div class="buttons">
                 <button class="macos">Version for MacOS</button>
@@ -233,7 +285,7 @@
     <div class="program">
         <img src="https://icon-library.com/images/google-photos-app-icon/google-photos-app-icon-23.jpg" draggable="false">
         <div class="program-details">
-            <div class="program-title">File Manager Slim</div>
+            <div class="program-title">File Manager Slim&nbsp;<a class="icon"></a></div>
             <div class="program-description">File Manager with a lot of features, like sorting files, addons and etc.</div>
             <div class="buttons">
                 <button class="macos">Version for MacOS</button>
@@ -248,7 +300,8 @@
     <div class="program">
         <img src="https://www.iconarchive.com/download/i86690/johanchalibert/mac-osx-yosemite/gamecenter.ico" draggable="false">
         <div class="program-details">
-            <div class="program-title">Game Center</div>
+            <div class="program-title"><a class="icon">&#xf150;</a>
+            &nbsp;Game Center</div>
             <div class="program-description">A customizable app for managing your game activities.</div>
             <div class="buttons">
                 <button class="macos">Version for MacOS</button>
@@ -263,7 +316,7 @@
     <div class="program">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Garry%27s_Mod_logo.svg/1200px-Garry%27s_Mod_logo.svg.png" draggable="false">
         <div class="program-details">
-            <div class="program-title">Garry's Mod: Deluxe</div>
+            <div class="program-title">Garry's Mod: Deluxe&nbsp;<a class="icon">&#xf119;</a></div>
             <div class="program-description">
 Garry's Mod Deluxe is an enhanced sandbox game with extra tools, features, and content.</div>
             <div class="buttons">
@@ -276,9 +329,81 @@ Garry's Mod Deluxe is an enhanced sandbox game with extra tools, features, and c
         </div>
     </div>
 </div>
-<footer style="text-align: center; margin: 20px">
-    &copy; SkibidiApps 2024 <br> <span style="font-size: 14px; opacity: 0.5">All rights reserved </span>
+<footer style="text-align: center; margin: 20px; margin-bottom: 50px">
+    <a style="font-size: 32px;" class="icon">&#xf109;</a> <br> &copy; SkibidiApps 2024 <br>
 </footer>
 
+<script>
+    
+    function init() {
+  new SmoothScroll(document, 120, 10);
+}
+
+function SmoothScroll(target, speed, smooth) {
+  if (target === document)
+    target =
+      document.scrollingElement ||
+      document.documentElement ||
+      document.body.parentNode ||
+      document.body; // cross browser support for document scrolling
+
+  var moving = false;
+  var pos = target.scrollTop;
+  var frame =
+    target === document.body && document.documentElement
+      ? document.documentElement
+      : target; // safari is the new IE
+
+  target.addEventListener("mousewheel", scrolled, { passive: false });
+  target.addEventListener("DOMMouseScroll", scrolled, { passive: false });
+
+  function scrolled(e) {
+    e.preventDefault(); // disable default scrolling
+
+    var delta = normalizeWheelDelta(e);
+
+    pos += -delta * speed;
+    pos = Math.max(0, Math.min(pos, target.scrollHeight - frame.clientHeight)); // limit scrolling
+
+    if (!moving) update();
+  }
+
+  function normalizeWheelDelta(e) {
+    if (e.detail) {
+      if (e.wheelDelta)
+        return (e.wheelDelta / e.detail / 40) * (e.detail > 0 ? 1 : -1);
+      // Opera
+      else return -e.detail / 3; // Firefox
+    } else return e.wheelDelta / 120; // IE,Safari,Chrome
+  }
+
+  function update() {
+    moving = true;
+
+    var delta = (pos - target.scrollTop) / smooth;
+
+    target.scrollTop += delta;
+
+    if (Math.abs(delta) > 0.5) requestFrame(update);
+    else moving = false;
+  }
+
+  var requestFrame = (function () {
+    // requestAnimationFrame cross browser
+    return (
+      window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.oRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      function (func) {
+        window.setTimeout(func, 1000 / 50);
+      }
+    );
+  })();
+}
+
+window.addEventListener("DOMContentLoaded", init);
+</script>
 </body>
 </html>
