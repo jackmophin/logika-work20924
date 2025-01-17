@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkibidiApps</title>
+    <style>
+      @font-face {
+        font-family: "icons";
+        src: url("https://jackmophin.github.io/local/fonts/icons.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      * {
+        transition: 0.35s ease;
+      }
+
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #121212;
+        color: white;
+        margin: 0;
+        padding: 0;
+        user-select: none;
+      }
+
+      header {
+        margin: 20px 0;
+        text-align: center;
+        font-size: 2em;
+        mix-blend-mode: screen;
+      }
+
+      header a:hover {
+        cursor: pointer;
+        text-shadow:
+          0 0 5px #ffffff,
+          0 0 10px #ffffff,
+          0 0 20px #ffffff,
+          0 0 40px #ffffff,
+          0 0 80px #ffffff;
+      }
+
+      .logo span {
+        color: #0090FF;
+      }
+
+      .logo span:hover {
+        color: #0090FF;
+        cursor: pointer;
+        text-shadow:
+          0 0 5px #0090FF,
+          0 0 10px #0090FF,
+          0 0 20px #0090FF,
+          0 0 40px #00FFFF,
+          0 0 80px #00FFFF;
+      }
+
+      .program-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 20px;
+      }
+
+      .program {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1e1e1e;
+        border-radius: 25px;
+        padding: 40px;
+        margin: 0 20px;
+        box-sizing: border-box;
+        position: relative;
+        border-radius: 25px;
+        overflow: hidden;
+      }
+
+      .program:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .program img {
+        width: 120px;
+        height: 120px;
+        border-radius: 25px;
+        object-fit: cover;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .program-details {
+        max-width: 60%;
+      }
+
+      .program-title {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+        align-items: center;
+        display: flex;
+      }
+
+      .icon {
+        font-family: "icons";
+        font-size: 1em;
+      }
+
+      .program-description {
+        font-size: 1.1em;
+        margin-bottom: 25px;
+        color: #c0c0c0;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .buttons button {
+        padding: 15px 25px;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: 0.7em;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #282828;
+        color: white;
+      }
+
+      .buttons button:hover {
+        background-color: lightblue;
+        color: black;
+      }
+
+      .link:hover {
+        color: #0090FF;
+        text-shadow:
+          0 0 5px #0090FF,
+          0 0 10px #0090FF,
+          0 0 20px #0090FF,
+          0 0 40px #00FFFF,
+          0 0 80px #00FFFF;
+      }
+
+      .link {
+        text-decoration: none;
+        color: #0090FF;
+        text-align: center;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        font-size: 18px;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      .center {
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: -20px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      nav a[selected="true"] {
+        text-shadow:
+          0 0 5px #ffffff,
+          0 0 10px #ffffff,
+          0 0 20px #ffffff,
+          0 0 40px #ffffff,
+          0 0 80px #ffffff;
+      }
+
+      nav a[selected="true"]:hover {
+        cursor: default;
+      }
+
+      nav:hover a:not(:hover)[selected="true"] {
+        text-shadow: none;
+      }
+      
+      .left-content {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="logo">
+      <span>Skibidi</span>
+      <a>Apps</a>
+      <div class="center">
+        <nav>
+          <a href="about" selected="true">About</a>
+          <a selected="false">Apps</a>
+          <a href="#" selected="false">License</a>
+        </nav>
+      </div>
+    </header>
+    <div class="program-container">
+  <div class="program">
+    <div class="left-content">
+      <img src="https://png.klev.club/uploads/posts/2024-05/png-klev-club-5exx-p-shd-bravl-stars-png-18.png">
+      <img src="https://cdn-icons-png.flaticon.com/512/3536/3536661.png">
+      <img src="https://cdn-icons-png.flaticon.com/512/3938/3938072.png">
+    </div>
+    <div class="program-details">
+      <div class="program-title">About us</div>
+      <div class="program-description">
+        We're SkibidiApps, a very cool indie game and apps company. Our products are worldwide, and we appreciate it! 
+        <br> 
+        Our objectives are: 
+        <br> 
+        <ul>
+          <li>Develop a very cool game about skibidi.</li>
+          <li>Create our own game engine.</li>
+          <li>Be the leading company in video game industries!</li>
+        </ul>
+        <br> 
+        Our most popular app is <a class="link" href="https://t.me">Telegram</a>. Try it now by clicking the title!
+      </div>
+    </div>
+  </div>
+</div>
